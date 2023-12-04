@@ -12,7 +12,7 @@
   </header>
   <main>
     <h2>Add Employee</h2>
-    <form onsubmit="workSubmit(event)">
+    <form id="formTitle" onsubmit="workSubmit(event)">
       <input
       placeholder="First Name" 
       type="text"
@@ -36,7 +36,7 @@
       <button class ="submit-Salary">Submit</button>
     </form>
     <h2>Employees</h2>
-    <table>
+    <table id="employeeGrid">
         <thead>
           <tr>
             <th>First Name</th>
@@ -53,7 +53,7 @@
     </table>
   </main>
   <footer>
-    <p>Total Monthly<span id="total-salary"></span>""</p>
+    <p>Total Monthly: </p><p id="total-salary"></p>
   </footer>
 </body>
 </html>

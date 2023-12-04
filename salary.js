@@ -1,5 +1,7 @@
 console.log('Make sure this works');
 
+let monthlySalary = 0
+
 function workSubmit(event){
     event.preventDefault();
     let tableBody = document.getElementById('tableBody');
@@ -15,7 +17,7 @@ function workSubmit(event){
     console.log("Expecting custom id #:",idNumber);
     console.log("Expecting custom job title:",jobTitle);
     console.log("Expecting custom salary:",annualSalary);
-    tableBody.innerHTML += //coming up with Uncaught TypeError: Cannot read properties of undefined (reading 'innerHTML')
+    tableBody.innerHTML += 
     `
     <tr>
         <td>${firstName}</td>
@@ -26,16 +28,31 @@ function workSubmit(event){
         <td><button onclick="deleteEmployee(event)">Delete</button></td>
     </tr>
     `
+    
 // todo this element is meant to accept the inputs that I put in
-    document.getElementById('firstName') = ''
-    document.getElementById('lastName') = ''
-    document.getElementById('idNumber') = ''
-    document.getElementById('jobTitle') = ''
-    document.getElementById('annualSalary') = ''
+    document.getElementById('firstName').value = ''
+    document.getElementById('lastName').value = ''
+    document.getElementById('idNumber').value = ''
+    document.getElementById('jobTitle').value = ''
+    document.getElementById('annualSalary').value = ''
 
     //attempting to get the monthly count in
-    let monthlySalary = document.getElementById('total-salary')
-    monthlySalary.innerHTML += 
+    // monthlySalary = document.getElementsByClassName('total-salary').value
+    // monthlySalary = annualSalary / 12
+    // console.log(monthlySalary = monthlySalary.toFixed(2))
+    // monthlySalary.innerHTML += '<span onclick="workSubmit(event)"></span>'
+    
+    monthlySalary += Number(annualSalary);
+  
+    const divisor = 12;
+    let trueMonthly = monthlySalary / divisor;
+    
+    let lastTotal = document.getElementById("total-salary");
+    lastTotal.innerText = trueMonthly;
+
+    if (trueMonthly > 20000) {
+        console.log('ALERT WE ARE OVER BUDGET')
+    }
     
 }
 function deleteEmployee(event) {
@@ -49,8 +66,8 @@ function deleteEmployee(event) {
 //     return event.target
 // }
 
-function alertSalary() {
-    if (monthlySalary > 20000) {
-        console.log('ALERT WE ARE OVER BUDGET')
-    }
-}
+// function alertSalary() {
+//     if (monthlySalary > 20000) {
+//         console.log('ALERT WE ARE OVER BUDGET')
+//     }
+// }
