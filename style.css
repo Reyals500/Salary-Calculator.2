@@ -2,5 +2,42 @@
 padding: 10px;
 }
 th{
-    padding: 10px;
+    padding: 50px;
+    background-color: rgb(26, 191, 26);
+    color: black;
+}
+#employeeGrid {
+    /* border: 3px black solid; */
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+    border-collapse: collapse;
+
+}
+
+#employeeGrid, th, td, #tableBody{
+    border: 1px solid black;
+    padding: 20px;
+    margin: 25px;
+    
+}
+tr:nth-child(even){
+    background-color: lightblue;
+}
+h1{
+    text-align: center;
+    text-decoration: underline;
+    font-weight: 100;
+}
+body{
+    background-color: rgb(150, 79, 221);
+}
+input{
+    background-color: rgb(178, 205, 229);
+}
+tr:nth-child(odd){
+    color: rgb(255, 255, 255);
+}
+footer{
+    color: white;
+    text-decoration: underline;
+    font-size: larger;
 }
