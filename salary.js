@@ -2,7 +2,7 @@ console.log('Make sure this works');
 
 let monthlySalary = 0
 
-function workSubmit(event){
+function submitEmployee(event){
     event.preventDefault();
     let tableBody = document.getElementById('tableBody');
 
@@ -49,9 +49,11 @@ function workSubmit(event){
     
     let lastTotal = document.getElementById("total-salary");
     lastTotal.innerText = trueMonthly;
+    let monthlyTotalFooter = document.getElementById("monthlyTotalFooter")
 
-    if (trueMonthly > 20000) {
+    if (Number(trueMonthly) > 20000) {
         console.log('ALERT WE ARE OVER BUDGET')
+        monthlyTotalFooter.classList.replace('baseBG', 'alertBG' )
     }
     
 }
