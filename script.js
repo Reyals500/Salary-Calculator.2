@@ -46,14 +46,15 @@ function submitEmployee(event){
   
     const divisor = 12;
     let trueMonthly = monthlySalary / divisor;
+    console.log("True Monthly", trueMonthly);
     
     let lastTotal = document.getElementById("total-salary");
-    lastTotal.innerText = trueMonthly;
+    lastTotal.textContent = trueMonthly;
+    
     let monthlyTotalFooter = document.getElementById("monthlyTotalFooter")
-
     if (Number(trueMonthly) > 20000) {
         console.log('ALERT WE ARE OVER BUDGET')
-        monthlyTotalFooter.classList.replace('baseBG', 'alertBG' )
+        monthlyTotalFooter.classList.replace('baseBG', 'over-budget' )
     }
     
 }
